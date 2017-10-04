@@ -1,0 +1,60 @@
+{
+  "definitions": {}, 
+  "info": {
+    "description": "powered by Flasgger", 
+    "termsOfService": "/tos", 
+    "title": "A swagger API", 
+    "version": "0.0.1"
+  }, 
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "getPetsById", 
+        "responses": {
+          "200": {
+            "description": "the word \"Hello!\""
+          }
+        }, 
+        "summary": "Index API, returns \"Hello!\""
+      }
+    }, 
+    "/digit": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ], 
+        "operationId": "uploadFile", 
+        "parameters": [
+          {
+            "description": "The uploaded file data", 
+            "in": "formData", 
+            "name": "file", 
+            "required": true, 
+            "type": "file"
+          }
+        ], 
+        "summary": "Takes a digit and attempts to classify using MNIST data"
+      }
+    }, 
+    "/number/{number}": {
+      "get": {
+        "operationId": "getPetsById", 
+        "parameters": [
+          {
+            "description": "the number", 
+            "in": "path", 
+            "name": "number", 
+            "type": "string"
+          }
+        ], 
+        "responses": {
+          "200": {
+            "description": "Hello number!"
+          }
+        }, 
+        "summary": "Repeats back a number to you"
+      }
+    }
+  }, 
+  "swagger": "2.0"
+}
